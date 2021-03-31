@@ -56,7 +56,7 @@ function App() {
     const result = win_probs().sort((a, b) => b.prob - a.prob)
     return (
       <div style={{margin: "0 auto", display: "flex", flexDirection: "column", alignItems:"center",
-      justifyContent: "center", position: "relative", height: "100vh", background: "#9DD9F3"}}>
+      justifyContent: "center", position: "relative", height: "100vh", background: "#9DD9F3", overflow: "hidden"}}>
         <div style={{width: "auto", display: "flex", flexDirection: "column", alignItems:"center",
       justifyContent: "center", borderRadius: "15px", boxShadow: "1px 1px 10px 1px black", background: "white"}}>
           {result.map(
