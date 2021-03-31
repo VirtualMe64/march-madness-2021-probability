@@ -55,10 +55,14 @@ function App() {
   } else {
     const result = win_probs().sort((a, b) => b.prob - a.prob)
     return (
-      <div>
-        {result.map(
-          (x) => <h1>{x.name}: {(x.prob * 100).toFixed(2)}%</h1>
-        )}
+      <div style={{margin: "0 auto", display: "flex", flexDirection: "column", alignItems:"center",
+      justifyContent: "center", position: "relative", height: "100vh", background: "#9DD9F3"}}>
+        <div style={{width: "auto", display: "flex", flexDirection: "column", alignItems:"center",
+      justifyContent: "center", borderRadius: "15px", boxShadow: "1px 1px 10px 1px black", background: "white"}}>
+          {result.map(
+            (x) => <h1 style={{margin: "15px", color: "black"}}>{x.name}: {(x.prob * 100).toFixed(2)}%</h1>
+          )}
+        </div>
       </div>
     );
   }
