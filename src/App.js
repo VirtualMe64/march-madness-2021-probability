@@ -29,7 +29,7 @@ function App() {
   }, [])
 
   const win_probs = () => {
-    let out = []
+    let out = []  
     const gonzagaOverall = items.forecasts.mens.teams.filter((x) => x.team_name === "Gonzaga")[0].rd7_win
     const uclaOverall = items.forecasts.mens.teams.filter((x) => x.team_name === "UCLA")[0].rd7_win
     const baylorOverall = items.forecasts.mens.teams.filter((x) => x.team_name === "Baylor")[0].rd7_win
@@ -38,7 +38,7 @@ function App() {
     const arizonaBeatsUConn = items.games.womens.filter((x) => x.team1 === "Arizona" && x.round === 5)[0]
     const arizonaBeatsUConnChance = arizonaBeatsUConn.live_prob !== null ? arizonaBeatsUConn.live_prob : arizonaBeatsUConn.pregame_prob
     const stanfordBeatsSouthCarolina = items.games.womens.filter((x) => x.team1 === "South Carolina" && x.round === 5)[0]
-    const stanfordBeatsSouthCarolinaChance = stanfordBeatsSouthCarolina.live_prob !== null ? stanfordBeatsSouthCarolina.live_prob : stanfordBeatsSouthCarolina.pregame_prob
+    const stanfordBeatsSouthCarolinaChance = 1 - (stanfordBeatsSouthCarolina.live_prob !== null ? stanfordBeatsSouthCarolina.live_prob : stanfordBeatsSouthCarolina.pregame_prob)
 
     out.push({name: "Besser", prob: uclaOverall * scOverall * arizonaBeatsUConnChance})
     out.push({name: "Dave", prob: gonzagaOverall + (uclaOverall * (1 - stanfordBeatsSouthCarolinaChance)) - out[0].prob})
